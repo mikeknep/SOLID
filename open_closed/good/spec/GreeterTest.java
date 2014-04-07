@@ -9,32 +9,24 @@ import static org.junit.Assert.assertEquals;
 /**
  * Created by mrk on 4/7/14.
  */
+
 public class GreeterTest {
-    private Personality personality;
+    private Personality mockPersonality;
 
     @Before
-    public void setUpPersonalities() {
-        ArrayList<Personality> personalities = new ArrayList<Personality>();
+    public void mockPersonality() {
+        class MockPersonality implements Personality {
+            public String greet() {
+                return "foo";
+            }
+        }
 
-        FormalPersonality fp = new FormalPersonality();
-        CasualPersonality cp = new CasualPersonality();
-        IntimatePersonality ip = new IntimatePersonality();
-
-        personalities.add(fp);
-        personalities.add(cp);
-        personalities.add(ip);
-
-        Random generator = new Random();
-        int index = generator.nextInt(personalities.size());
-
-        Personality personality = personalities.get(index);
+        mockPersonality = new MockPersonality();
     }
 
     @Test
     public void testGreetsSomeone() {
-//        Greeter greeter = new Greeter(personality);
-        CasualPersonality cp = new CasualPersonality();
-        Greeter greeter = new Greeter(cp);
-        assertEquals("".getClass(), greeter.greet().getClass());
+        Greeter greeter = new Greeter(mockPersonality);
+        assertEquals("foo", greeter.greet());
     }
 }
