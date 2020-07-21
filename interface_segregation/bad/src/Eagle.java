@@ -1,7 +1,7 @@
 /**
  * Created by mrk on 4/7/14.
  */
-public class Eagle implements Bird {
+public class Eagle implements Bird, FlyBird {
     String currentLocation;
     int numberOfFeathers;
 
