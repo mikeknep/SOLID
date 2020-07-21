@@ -1,7 +1,7 @@
 /**
  * Created by mrk on 4/7/14.
  */
-public class Penguin implements Bird {
+public class Penguin implements Bird, SwimBird {
     String currentLocation;
     int numberOfFeathers;
 
@@ -11,10 +11,6 @@ public class Penguin implements Bird {
 
     public void molt() {
         this.numberOfFeathers -= 1;
-    }
-
-    public void fly() {
-        throw new UnsupportedOperationException();
     }
 
     public void swim() {
