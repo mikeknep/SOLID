@@ -1,0 +1,17 @@
+dependencies {
+    testImplementation 'junit:junit:4.12'
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs 'src'
+        }
+    }
+
+    test {
+        java {
+            srcDirs 'spec'
+        }
+    }
+}
