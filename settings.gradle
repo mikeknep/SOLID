@@ -8,4 +8,8 @@
  */
 
 rootProject.name = 'SOLID'
-include 'single_responsibility:bad', 'single_responsibility:good'
+include 'single_responsibility:bad', 'single_responsibility:good',
+        'open_closed:bad', 'open_closed:good',
+        'liskov_substitution:bad', 'liskov_substitution:good',
+        'interface_segregation:bad', 'interface_segregation:good',
+        'dependency_inversion:bad', 'dependency_inversion:good'
