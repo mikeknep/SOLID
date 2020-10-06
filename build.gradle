@@ -8,7 +8,9 @@ plugins {
     id 'java'
 }
 
-repositories {
-    mavenLocal()
-    mavenCentral()
+subprojects {
+    repositories {
+        mavenLocal()
+        mavenCentral()
+    }
 }
